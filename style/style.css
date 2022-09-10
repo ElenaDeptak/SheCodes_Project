@@ -1,0 +1,185 @@
+img.bg {
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+  
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+.input-group-text {
+    background-color: #C985A4 !important;
+}
+
+.search {
+    display: flex;
+    margin: 70px auto 20px;
+}
+
+.btn-location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+}
+
+.sunrise-sunset {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin: 10px;
+    height: 130px;
+    padding-bottom: 10px;
+}
+
+.sunrise-sunset img, .wind img {
+    height: 30px;
+}
+
+.sunrise, .sunset {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 45px;
+}
+
+.sunrise h6, .sunset h6 {
+    margin: auto;
+    font-family: 'Cabin Condensed', sans-serif;
+    font-size: 18px;
+}
+
+.wind-container {
+    margin: 0 10px;
+    height: 120px;
+}
+
+.wind {
+    display: block;
+    text-align: center;
+}
+
+.wind h6 {
+    margin-top: 10px;
+}
+
+.main {
+    width: 55%;
+    margin: auto;
+}
+
+.location {
+    height: 100%;
+    width: 255px;
+}
+
+.city {
+    display: flex;
+    align-items: center;
+}
+
+.city i {
+    font-size: 25px;
+}
+
+.card-shadow {
+    opacity: 0.6;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(174, 173, 171);
+    border-radius: 10px;
+    box-shadow: rgb(127, 127, 127) 4px 5px 6px 6px;
+}
+
+.main-image {
+    display: flex;
+    align-items: center;
+}
+
+.weather-img {
+    width: 165px;
+    margin: 0 20px;
+}
+
+.hours-container {
+    height: auto;
+    margin: 20px 0;
+    padding: 10px 0;
+}
+
+.days-container {
+    margin-top: 20px;
+}
+
+.title {
+    color:black;
+    font-family: 'Cabin Condensed', sans-serif;
+    margin: 0 5px;
+}
+
+.hour h5, .day h5, .wind h6, .location h6 {
+    font-family: 'Cabin Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+}
+
+.day h6 {
+    font-family: 'Cabin Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+}
+
+.day, .hour {
+    display: flex;
+    justify-content: space-around;
+    height: 160px;
+    flex-direction: column;
+    text-align: center;
+}
+
+.hour {
+    height: 100px;
+}
+
+.day img, .hour img {
+    height: 40px;
+    margin: 5px auto;
+}
+
+.location {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 20px 0 20px 10px;
+    font-family: 'Cabin Condensed', sans-serif;
+}
+
+.location p {
+    font-size: 70px;
+    color: #924E98;
+}
+
+.location h5 {
+    font-size: 30px;
+    color: black;
+}
+
+.temperature {
+    display: flex;
+}
+
+.cel-far {
+    padding-top: 22px;
+    font-size: 25px;
+}
+
+.fa-location-dot {
+    color: #C985A4 !important;
+}
+
+.fa-magnifying-glass {
+    color: white !important;
+}

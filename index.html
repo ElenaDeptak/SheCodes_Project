@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@500&family=Crimson+Pro:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/89aa32c3a9.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+    <title>Weahter</title>
+</head>
+<body>
+    <img src="images/background.jpg" class="bg" alt="">
+    <div class="main">
+        <div class="container">
+            <div class="search" id="search city">
+                <span class="btn-location" type="button" id="location">
+                    <i class="fa-solid fa-location-dot"></i>
+                </span>
+                <div class="input-group flex-nowrap">
+                    <input type="text" class="form-control" placeholder="Search for place" id="cityInput">
+                    <span class="input-group-text" type="button" id="addon-wrapping">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                </div>
+            </div>
+    
+            <div class="current">
+                <div class="row">
+                    <div class="col">
+                        <div class="location card-shadow">
+                            <div class="city">
+                                <h5 class="title" id="city">Rivne</h5>
+                            </div>
+                            <h6 id="currentDate">Monday, July 17, 14:57</h6>
+                            <div class="temperature">                                
+                                <p id="temperature">18</p>
+                                <div class="cel-far">
+                                    <span type="button" id="celsius">°C</span> | <span type="button" id="fahrenheit">°F</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="sunrise-sunset card-shadow">
+                                <h5 class="title">Sunrise & Sunset</h5>
+                                <div class="sunrise">
+                                    <img src="images/sunset.png" alt="">
+                                    <h6>06:30 AM</h6>
+                                </div>
+                                <div class="sunset">
+                                    <img src="images/moon.png" alt="">
+                                    <h6>08:43 PM</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="wind-container card-shadow">
+                                <h5 class="title">Wind</h5>
+                                <div class="wind">
+                                    <img src="images/wind.png" alt="">
+                                    <h6>7.70 km/h</h6>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col main-image">
+                        <img class="weather-img" src="images/001-cloud.png">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="hours-container card-shadow">
+                <div class="row">
+                    <div class="col-2">
+                        <div class="hour">
+                            <h5>6 PM</h5>
+                            <img src="images/004-cloudy.png" alt="">
+                            <h5>18°</h5>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="hour">
+                            <h5>7 PM</h5>
+                            <img src="images/003-rain.png" alt="">
+                            <h5>16°</h5>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="hour">
+                            <h5>8 PM</h5>
+                            <img src="images/003-rain.png" alt="">
+                            <h5>20°</h5>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="hour">
+                            <h5>9 PM</h5>
+                            <img src="images/003-rain.png" alt="">
+                            <h5>14°</h5>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="hour">
+                            <h5>10 PM</h5>
+                            <img src="images/003-rain.png" alt="">
+                            <h5>10°</h5>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="hour">
+                            <h5>11 PM</h5>
+                            <img src="images/003-rain.png" alt="">
+                            <h5>9°</h5>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+    
+            <div class="days-container">
+                <div class="row">
+                    <div class="col-2">
+                        <div class="day card-shadow">
+                            <h5 class="title">Tue</h5>
+                            <img src="images/006-night.png" alt="">
+                            <h5>18°C</h5>
+                            <h6>14°C</h6>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="day card-shadow">
+                            <h5 class="title">Wed</h5>
+                            <img src="images/006-night.png" alt="">
+                            <h5>20°C</h5>
+                            <h6>16°C</h6>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="day card-shadow">
+                            <h5 class="title">Thu</h5>
+                            <img src="images/006-night.png" alt="">
+                            <h5>22°C</h5>
+                            <h6>14°C</h6>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="day card-shadow">
+                            <h5 class="title">Fri</h5>
+                            <img src="images/006-night.png" alt="">
+                            <h5>16°C</h5>
+                            <h6>13°C</h6>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="day card-shadow">
+                            <h5 class="title">Sat</h5>
+                            <img src="images/006-night.png" alt="">
+                            <h5>18°C</h5>
+                            <h6>14°C</h6>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="day card-shadow">
+                            <h5 class="title">Sun</h5>
+                            <img src="images/006-night.png" alt="">
+                            <h5>21°C</h5>
+                            <h6>13°C</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+
+    <script src="src/app.js"></script>
+</body>
+</html>
