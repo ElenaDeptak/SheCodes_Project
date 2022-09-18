@@ -15,7 +15,7 @@ let months = [
     "December"
   ];
 
-  let tempCelsium;
+  let tempCelsium = null;
   let tempFahrenheit;
 
   let apiKey = "a98cf904e4273ceac14ee7e5c042eda8";
@@ -68,7 +68,9 @@ let months = [
 
   function convertToFahrenheit(event) {
     event.preventDefault()
-    tempFahrenheit = Math.round((tempCelsium*1.8)+32);
+    convertingToCel.classList.remove("active");
+    convertingToFar.classList.add("active");
+    tempFahrenheit = Math.round((tempCelsium * 9) / 5 + 32);
     let temp = document.querySelector("#temperature");
     temp.innerHTML = tempFahrenheit;
   }
@@ -76,8 +78,10 @@ let months = [
   let convertingToFar = document.querySelector("#fahrenheit");
   convertingToFar.addEventListener("click", convertToFahrenheit);
 
-  function convertToCelsius(tempCelsium) {
+  function convertToCelsius(event) {
     event.preventDefault()
+    convertingToFar.classList.remove("active");
+    convertingToCel.classList.add("active");
     let temp = document.querySelector("#temperature");
     temp.innerHTML = tempCelsium;
   }
@@ -90,10 +94,14 @@ let months = [
     let cityInput = response.data.name;
     let city = document.querySelector("#city");
     let result = cityInput.charAt(0).toUpperCase() + cityInput.slice(1);
+    let iconElement = document.querySelector("#icon");
+    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    let windElemant = document.querySelector("#wind");
+    windElemant.innerHTML=response.data.wind.speed;
     city.innerHTML = result;
     tempCelsium = Math.round(response.data.main.temp);
-
-    convertToCelsius(tempCelsium);
+    let temp = document.querySelector("#temperature");
+    temp.innerHTML = tempCelsium;
   }
 
   function getWeatherByGeolocation(position) {
