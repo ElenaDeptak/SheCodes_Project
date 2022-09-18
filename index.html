@@ -15,15 +15,15 @@
     <title>Weahter</title>
 </head>
 <body>
-    <img src="images/background.jpg" class="bg" alt="">
+    <img src="images/background1.jpg" class="bg" alt="">
     <div class="main">
         <div class="container">
-            <div class="search" id="search city">
+            <div class="search">
                 <span class="btn-location" type="button" id="location">
                     <i class="fa-solid fa-location-dot"></i>
                 </span>
                 <div class="input-group flex-nowrap">
-                    <input type="text" class="form-control" placeholder="Search for place" id="cityInput">
+                    <input type="text" class="form-control" placeholder="Search for place" id="cityInput" autocomplete="off">
                     <span class="input-group-text" type="button" id="addon-wrapping">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </span>
@@ -38,6 +38,7 @@
                                 <h5 class="title" id="city">Rivne</h5>
                             </div>
                             <h6 id="currentDate">Monday, July 17, 14:57</h6>
+                            <h6 id="weather-description">Weather description</h6>
                             <div class="temperature">                                
                                 <p id="temperature">18</p>
                                 <div class="cel-far">
@@ -45,7 +46,6 @@
                                         <a href="#" id="celsius" class="active">°C</a> |
                                         <a href="#" id="fahrenheit">°F</a>
                                     </span>
-                                    <!-- <span type="button" id="celsius">°C</span> | <span type="button" id="fahrenheit">°F</span> -->
                                 </div>
                             </div>
                         </div>
@@ -55,12 +55,12 @@
                             <div class="sunrise-sunset card-shadow">
                                 <h5 class="title">Sunrise & Sunset</h5>
                                 <div class="sunrise">
-                                    <img src="images/sunset.png" alt="">
-                                    <h6>06:30 AM</h6>
+                                    <img src="images/sunrise.png" alt="">
+                                    <h6 id="sunrise">06:30 AM</h6>
                                 </div>
                                 <div class="sunset">
-                                    <img src="images/moon.png" alt="">
-                                    <h6>08:43 PM</h6>
+                                    <img src="images/sun.png" alt="">
+                                    <h6 id="sunset">08:43 PM</h6>
                                 </div>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                             <div class="wind-container card-shadow">
                                 <h5 class="title">Wind</h5>
                                 <div class="wind">
-                                    <img src="images/wind.png" alt="">
+                                    <img src="images/wind1.png" alt="">
                                     <h6> <span id="wind"></span> Km/H</h6>
                                 </div>
                                 

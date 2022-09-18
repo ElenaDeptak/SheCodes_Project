@@ -102,6 +102,24 @@ let months = [
     tempCelsium = Math.round(response.data.main.temp);
     let temp = document.querySelector("#temperature");
     temp.innerHTML = tempCelsium;
+    let weatherDescription = document.querySelector("#weather-description");
+    weatherDescription.innerHTML = response.data.weather[0].description;
+    
+    let sunRise = document.querySelector("#sunrise");
+    sunRiseTime = new Date(response.data.sys.sunrise * 1000);
+    let time = sunRiseTime.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+    sunRise.innerHTML = time;
+
+    let sunSet = document.querySelector("#sunset");
+    sunSetTime = new Date(response.data.sys.sunset * 1000);
+    let timeset = sunSetTime.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+    sunSet.innerHTML = timeset;
   }
 
   function getWeatherByGeolocation(position) {
