@@ -98,28 +98,28 @@ let months = [
     navigator.geolocation.getCurrentPosition(getWeatherByGeolocation);
   }
 
-  function convertToFahrenheit(event) {
-    event.preventDefault()
-    convertingToCel.classList.remove("active");
-    convertingToFar.classList.add("active");
-    tempFahrenheit = Math.round((tempCelsium * 9) / 5 + 32);
-    let temp = document.querySelector("#temperature");
-    temp.innerHTML = tempFahrenheit;
-  }
+  // function convertToFahrenheit(event) {
+  //   event.preventDefault()
+  //   convertingToCel.classList.remove("active");
+  //   convertingToFar.classList.add("active");
+  //   tempFahrenheit = Math.round((tempCelsium * 9) / 5 + 32);
+  //   let temp = document.querySelector("#temperature");
+  //   temp.innerHTML = tempFahrenheit;
+  // }
 
-  let convertingToFar = document.querySelector("#fahrenheit");
-  convertingToFar.addEventListener("click", convertToFahrenheit);
+  // let convertingToFar = document.querySelector("#fahrenheit");
+  // convertingToFar.addEventListener("click", convertToFahrenheit);
 
-  function convertToCelsius(event) {
-    event.preventDefault()
-    convertingToFar.classList.remove("active");
-    convertingToCel.classList.add("active");
-    let temp = document.querySelector("#temperature");
-    temp.innerHTML = tempCelsium;
-  }
+  // function convertToCelsius(event) {
+  //   event.preventDefault()
+  //   convertingToFar.classList.remove("active");
+  //   convertingToCel.classList.add("active");
+  //   let temp = document.querySelector("#temperature");
+  //   temp.innerHTML = tempCelsium;
+  // }
 
-  let convertingToCel = document.querySelector("#celsius");
-  convertingToCel.addEventListener("click", convertToCelsius);
+  // let convertingToCel = document.querySelector("#celsius");
+  // convertingToCel.addEventListener("click", convertToCelsius);
 
   function getForecast(coordinates) {
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${apiKey}`;
@@ -128,13 +128,15 @@ let months = [
 
 
   function showWeatherInfo(response) {
+    
+    console.log(response);
     let cityInput = response.data.name;
     let city = document.querySelector("#city");
     let result = cityInput.charAt(0).toUpperCase() + cityInput.slice(1);
     let iconElement = document.querySelector("#icon");
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     let windElemant = document.querySelector("#wind");
-    windElemant.innerHTML=response.data.wind.speed;
+    windElemant.innerHTML = Math.round(response.data.wind.speed);
     city.innerHTML = result;
     tempCelsium = Math.round(response.data.main.temp);
     let temp = document.querySelector("#temperature");
