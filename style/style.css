@@ -9,6 +9,10 @@ img.bg {
     z-index: -1;
   }
 
+  .container {
+    max-width: 700px !important;
+  }
+
 .input-group-text {
     background-color: #ffaf0e !important;
 }
@@ -42,7 +46,7 @@ img.bg {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 45px;
+    padding: 0 40px;
 }
 
 .sunrise h6, .sunset h6 {
@@ -98,7 +102,7 @@ img.bg {
 }
 
 .weather-img {
-    width: 165px;
+    width: 145px;
     margin: 0 20px;
 }
 
@@ -202,4 +206,8 @@ img.bg {
 
 #weather-description {
     text-transform: capitalize;
+}
+
+.name {
+    color: white;
 }
